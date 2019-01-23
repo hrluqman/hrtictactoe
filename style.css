@@ -1,0 +1,75 @@
+td {
+    border: 5px solid #779CB7;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Muli', sans-serif;
+    font-size: 70px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+table tr:first-child td {
+    border-top: 0;
+}
+
+table tr:last-child td {
+    border-bottom: 0;
+}
+
+table tr td:first-child {
+    border-left: 0;
+}
+
+table tr td:last-child {
+    border-right: 0;
+}
+
+.endgame {
+    display: none;
+    width: 200px;
+    height: 100px;
+    top: 130px;
+    background-color: red;
+    opacity: 0.6;
+    position: absolute;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5em;
+}
+
+body {
+    background-color: rgb(179, 80, 80);
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    background-color: aquamarine;
+    border-bottom: 3px solid rebeccapurple; 
+    border-right: 3px solid rebeccapurple; 
+    cursor: pointer;
+}
+
+h1 {
+    color: azure;
+    margin-top: 20vh;
+}
+
+h3 {
+    font-family: 'Muli', sans-serif;
+}
+
+/* #90BEDE */

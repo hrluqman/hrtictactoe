@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Links to js and css files go here -->
+    <title>Tic Tac Toe</title>
+    <!-- Link to CSS file -->
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+    <h1>TIC TAC TOE</h1>
+
+    <h3 id="rounds"></h3>
+
+   <table>
+        <tr>
+           <td class="cell" id="1"></td>
+           <td class="cell" id="2"></td>
+           <td class="cell" id="3"></td>
+        </tr>
+        <tr>
+            <td class="cell" id="4"></td>
+            <td class="cell" id="5"></td>
+            <td class="cell" id="6"></td>
+        </tr>
+        <tr>
+            <td class="cell" id="7"></td>
+            <td class="cell" id="8"></td>
+            <td class="cell" id="9"></td>
+        </tr>
+   </table>
+
+   <div class="endgame">
+       <div class="text"></div>
+   </div>
+
+   <h3 id="winner"></h3>
+
+   <button onclick="startGame()">Restart Match</button>
+   
+
+    <script src="./scripty.js"></script>
+</body>
+</html>
