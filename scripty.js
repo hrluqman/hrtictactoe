@@ -9,6 +9,7 @@ const cells = document.getElementsByClassName("cell");
 startGame();
 
 
+// Start the game
 function startGame(){
     document.querySelector(".endgame").style.display = "none"; 
     origBoard = Array.from(Array(9).keys());
@@ -28,11 +29,12 @@ function startGame(){
     
 }
 
-
+// When a box is clicked
 function turnClick(square){
     turn(square.target.id, thePlayer);
 }
 
+// Insert the X/O and changing turn of a player 
 function turn (squareId, player){ 
     
     origBoard[squareId] = player;
@@ -48,17 +50,18 @@ function turn (squareId, player){
     thePlayer = thePlayer === "X" ? "O" : "X";
     console.log("Next Turn:", thePlayer);
     round.innerHTML = "Player " + thePlayer + " Turn";
-    let gameWon = checkWin(origBoard, player);
+    let gameWon = checkWin(origBoard, player);         // Go to checkWin function
     if (gameWon){ gameOver(gameWon); whoWon(gameWon.player) }
 }
 
 
+// Check if one of the player has won the game
 function checkWin(board, player){
-    let plays = board.reduce((a,e,i) =>
-    (e === player) ? a.concat(i) : a, []);
+    let plays = board.reduce((a,e,i) =>     // replacing the original board to an update selected box
+    (e === player) ? a.concat(i) : a, []);  
     let gameWon = null;
     for(let [index, win] of winCombos.entries()){
-        if(win.every(elem => plays.indexOf(elem) > -1)){
+        if(win.every(elem => plays.indexOf(elem) > -1)){    // Compare to winCombos array if every combination is chosen
             gameWon = {index: index, player: player};
             break;
         }
@@ -66,6 +69,7 @@ function checkWin(board, player){
     return gameWon;
 }
 
+// Show which box has been chosen
 function gameOver(gameWon){
     for(let index of winCombos[gameWon.index]){
         document.getElementById(index).style.backgroundColor =
@@ -78,6 +82,7 @@ function gameOver(gameWon){
     return gameWon.player;
 }
 
+// State which player has won the game
 function whoWon(lastPlayer){
     alert("The Game Has Finished");
     let winner = document.getElementById("winner");
