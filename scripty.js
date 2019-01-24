@@ -65,6 +65,15 @@ function checkWin(board, player){
             gameWon = {index: index, player: player};
             break;
         }
+        else if(moves == 9 && !(win.every(elem => plays.indexOf(elem) > -1))){
+            alert("draw");
+            for(var i = 0; i<cells.length; i++){
+                cells[i].removeEventListener("click", turnClick, false);
+            }
+            round.innerHTML="";
+            winner.innerHTML = "It's a Tie Game";
+            break;
+        }
     }
     return gameWon;
 }
